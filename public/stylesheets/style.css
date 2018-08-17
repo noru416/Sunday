@@ -1,0 +1,283 @@
+@font-face{font-family:'Circular'; src:url('/fonts/CircularStd-Book.woff')}
+
+html {
+  text-size-adjust: 100%;
+  font-size: 16px;
+}
+body {
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font-size: 1.12rem;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  font-style: normal;
+  font-variant-ligatures: normal;
+  font-variant-caps: normal;
+  font-variant-numeric: normal;
+  font-variant-east-asian: normal;
+  font-weight: normal;
+  font-stretch: normal;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+ul, li {
+  list-style: none;
+}
+
+.container-fluid.main-header {
+  max-width: 100%;
+  padding: 0;
+  margin-bottom: 50px;
+  background-color: white;
+  text-align: center;
+  font-family: "Circular",Arial,sans-serif;
+}
+
+.site-title {
+  display: none;
+  width: 100%;
+  height: auto;
+  line-height: 1;
+  border-bottom: 0;
+  margin: 0;
+  padding: 0;
+}
+
+.site-title a {
+  color: black;
+}
+
+.menu-toggle {
+  display: none;
+  right: auto;
+  left: 8px;
+  padding: 20px;
+  background-color: transparent;
+  border: 0;
+  position: absolute;
+  width: 20px;
+  height: 15px;
+  margin-left: -15px;
+  top: 0;
+  z-index: 3;
+  box-sizing: content-box;
+}
+.menu-toggle:before, .menu-toggle:after{
+  content: "";
+  position: relative;
+  left: 0;
+  
+  display: block;
+  width: 100%;
+  height: 3px;
+  background-color: black;
+  transition: transform .15s ease-in-out,bottom .15s ease-in-out;
+  box-sizing: content-box;
+}
+
+.menu-toggle span {
+  height: 3px;
+  background-color: black;
+  display: block;
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+.menu-toggle:before {
+  bottom: 3px;
+}
+.menu-toggle:after {
+  bottom: -3px;
+}
+
+.wrapper-sticky {
+  display: block !important;
+  width: auto !important;
+  height: 60px;
+  margin: auto;
+  position: relative;
+  float: none;
+  left: 0;
+  right: auto;
+  top: auto;
+  bottom: auto;
+  vertical-align: top;
+}
+
+.main-menu {
+  margin-top: 0;
+  padding-bottom: 0;
+  border-bottom: 0;
+  z-index: 999;
+  padding: 19px 0;
+  transition: background .2s ease-in;
+  left: 0 !important;
+  width: 100% !important;
+  top: 0px;
+  bottom: auto;
+  right: auto;
+  position: absolute;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  max-width: 100%;
+  margin: 0;
+  background-color: #191919;
+  height: 60px;
+  font-size: 1.25rem;
+  font-family: 'Circular';
+}
+
+.main-menu li a {
+  border-bottom: 2px solid transparent;
+  display: block;
+}
+
+.main-menu .logo {
+  position: absolute;
+  top: 17px;
+  left: 24px;
+  display: inline-block !important;
+  width: 70px;
+  height: 25px;
+  text-align: center;
+}
+.main-menu .logo a {
+  color: white;
+  font-size: 1.25rem;
+}
+
+.main-menu .menu {
+  display: flex;
+  max-width: 1250px;
+  width: 100%;
+  padding: 0 150px;
+  margin: 0 auto;
+  text-align: center;
+  justify-content: center;
+}
+.main-menu li {
+  display: inline-block;
+  line-height: 20px;
+  position: relative;
+}
+.main-menu .menu li {
+  position: relative;
+  margin: 0 15px;
+}
+.sub-menu {
+  display: none;
+  background: #191919;
+  text-align: right;
+  position: absolute;
+  padding: 15px;
+  width: 186px;
+  right: 0;
+  left: auto;
+  z-index: 1000;
+}
+.sub-menu li {
+  display: block;
+  padding: 5px 0;
+  line-height: 1.2;
+}
+
+.main-menu li.menu-item-has-children>a:after {
+  border-top-color: white;
+  content: "";
+  border: solid transparent;
+  height: 0;
+  width: 0;
+  pointer-events: none;
+  border-color: transparent;
+  border-top-color: black;
+  border-width: 6px;
+  display: inline-block;
+  vertical-align: bottom;
+  margin-top: 8px;
+  margin-left: 8px;
+}
+
+.main-menu .menu li:hover ul {
+  display: block;
+}
+.main-menu .menu-main-site>li, .main-menu .menu-main-site>li:nth-child(-n+3), .main-menu .menu-main-site>li:nth-child(n+3) {
+  margin-right: 15px;
+  margin-left: 15px;
+}
+
+/* ipad responsive */
+@media (max-width:  1023px) {
+  body {
+    background-color: #f6f6f6;
+  }
+  .container-fluid.main-header {
+    margin-bottom: 1.25rem;
+  }
+  .site-title {
+    display: block;
+    margin: 0;
+    height: 69px;
+    line-height: 69px;
+    position: relative;
+    z-index: 2;
+    border-bottom: 1px solid #ebebeb;
+  }
+  .site-title a {
+    display: inline-block;
+  }
+  .menu-toggle {
+    display: block;
+    padding: 27px;
+  }
+  .wrapper-sticky {
+    height: auto;
+  }
+  .main-menu {
+    display: none;
+  }
+}
+
+/* iphone responsive */
+@media (max-width: 767px) {
+  .main-menu {
+    
+  }
+  .site-title {
+    height: 55px;
+    line-height: 55px;
+  }
+  .menu-toggle {
+    padding: 20px;
+  }
+}
+
+.container {
+  height: 4937px;
+  max-width: 1260px;
+  margin: auto;
+  width: 100% !important;
+}
+
+.row {
+  height: 920px;
+  margin-bottom: 20px;
+}
+
+.row div {
+  height: 100%;;
+  padding: 0 5px;
+}
+.row div a img {
+  position: relative;
+  top: auto;
+  left: auto;
+  transform: none;
+  max-width: 100%;
+  min-height: 0;
+}
